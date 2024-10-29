@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Followgram - Instagramフォロワー増加サービス</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            color: white;
+        }
+        .container {
+            min-height: 100vh;
+            background: linear-gradient(to bottom right, #9333ea, #ec4899);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1-3i0r8VkYx0gC1MF0QKRA66bUub1ZoD.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5;
+            z-index: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            width: 100%;
+        }
+        h1, h2, p {
+            color: white;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        .tab {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .tab.active {
+            background: white;
+            color: #9333ea;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .service-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 1rem;
+            color: white;
+        }
+        .service-card h3 {
+            margin-top: 0;
+        }
+        .service-card ul {
+            padding-left: 1.5rem;
+        }
+        .button {
+            background: white;
+            color: #9333ea;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        .form-container {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 2rem;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid white;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        .form-container input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .faq {
+            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 1rem;
+        }
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+        .faq-question {
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .faq-answer {
+            display: none;
+            margin-top: 0.5rem;
+        }
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: white;
+        }
+        a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="background"></div>
+        <div class="content">
+            <header>
+                <h1>Followgram</h1>
+                <p>Instagramフォロワー増加サービス</p>
+            </header>
+
+            <div class="tabs">
+                <button class="tab active" data-tab="followers">フォロワー</button>
+                <button class="tab" data-tab="likes">いいね</button>
+                <button class="tab" data-tab="reels">リール再生回数</button>
+            </div>
+
+            <div class="services" id="services">
+                <!-- Services will be dynamically inserted here -->
+            </div>
+
+            <div class="form-container">
+                <h2>Instagramのユーザーネームを入力</h2>
+                <p>このアカウントにサービスを提供します</p>
+                <input type="text" placeholder="@を除いたユーザーネームを入力" id="username">
+                <button class="button">支払いに進む</button>
+            </div>
+
+            <div class="faq">
+                <h2>よくある質問</h2>
+                <div class="faq-item">
+                    <div class="faq-question">サービスは安全ですか？</div>
+                    <div class="faq-answer">はい、当社のサービスは完全に安全です。私たちは高品質なアカウントのみを使用し、Instagramのガイドラインに沿って徐々にフォロワーを増やします。あなたのアカウントが危険にさらされることはありません。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">納品にはどのくらい時間がかかりますか？</div>
+                    <div class="faq-answer">通常、注文後24時間以内に納品を開始します。大規模な注文の場合は、自然な成長を模倣するために、数日かけて徐々に納品します。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">支払い方法は何がありますか？</div>
+                    <div class="faq-answer">クレジットカード、PayPal、銀行振込に対応しています。すべての取引は暗号化され、安全に処理されます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">返金ポリシーはありますか？</div>
+                    <div class="faq-answer">はい、30日間の返金保証を提供しています。サービスに満足できない場合は、全額返金いたします。ただし、返金前にサポートチームがお客様の問題解決のお手伝いをさせていただきます。</div>
+                </div>
+            </div>
+
+            <footer>
+                <p>© 2024 Follow Planet. All rights reserved.</p>
+                <p>
+                    <a href="#">利用規約</a> | 
+                    <a href="#">プライバシーポリシー</a>
+                </p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        const services = {
+            followers: [
+                { amount: 1000, price: 1100 },
+                { amount: 5000, price: 4400 },
+                { amount: 10000, price: 7700 },
+            ],
+            likes: [
+                { amount: 500, price: 550 },
+                { amount: 2000, price: 1650 },
+                { amount: 5000, price: 3300 },
+            ],
+            reels: [
+                { amount: 1000, price: 880 },
+                { amount: 5000, price: 3300 },
+                { amount: 10000, price: 5500 },
+            ],
+        };
+
+        function renderServices(type) {
+            const servicesContainer = document.getElementById('services');
+            servicesContainer.innerHTML = '';
+            services[type].forEach(pkg => {
+                const card = document.createElement('div');
+                card.className = 'service-card';
+                card.innerHTML = `
+                    <h3>${pkg.amount.toLocaleString()} ${type === 'followers' ? 'フォロワー' : type === 'likes' ? 'いいね' : 'リール再生回数'}</h3>
+                    <p>${pkg.price.toLocaleString()}円</p>
+                    <ul>
+                        <li>高品質な${type === 'followers' ? 'フォロワー' : type === 'likes' ? 'いいね' : 'リール再生回数'}</li>
+                        <li>迅速な納品（24時間以内）</li>
+                        <li>24時間年中無休のサポート</li>
+                        <li>安全で目立たない配信</li>
+                    </ul>
+                    <button class="button">今すぐ購入</button>
+                `;
+                servicesContainer.appendChild(card);
+            });
+        }
+
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                renderServices(tab.dataset.tab);
+            });
+        });
+
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        renderServices('followers');
+    </script>
+</body>
+</html>
