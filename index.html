@@ -166,6 +166,14 @@
             </div>
 
             <div class="form-container">
+                <h2>業界最高水準の品質</h2>
+                <p>✓ 100%日本人アカウント</p>
+                <p>✓ 安心・安全な運用</p>
+                <p>✓ 素早い納品</p>
+            </div>
+            
+
+            <div class="form-container">
                 <h2>Instagramのユーザーネームを入力</h2>
                 <p>このアカウントにサービスを提供します</p>
                 <input type="text" placeholder="@を除いたユーザーネームを入力" id="username">
@@ -205,19 +213,19 @@
     <script>
         const services = {
             followers: [
-                { amount: 1000, price: 1100 },
-                { amount: 5000, price: 4400 },
-                { amount: 10000, price: 7700 },
+                { amount: 100, price: 1400 },
+                { amount: 500, price: 5400 },
+                { amount: 1000, price: 9700 },
             ],
             likes: [
-                { amount: 500, price: 550 },
-                { amount: 2000, price: 1650 },
-                { amount: 5000, price: 3300 },
+                { amount: 500, price: 1400 },
+                { amount: 2000, price: 3800 },
+                { amount: 5000, price: 1280 },
             ],
             reels: [
-                { amount: 1000, price: 880 },
-                { amount: 5000, price: 3300 },
-                { amount: 10000, price: 5500 },
+                { amount: 10000, price: 880 },
+                { amount: 50000, price: 3300 },
+                { amount: 100000, price: 5500 },
             ],
         };
 
@@ -231,7 +239,9 @@
                     <h3>${pkg.amount.toLocaleString()} ${type === 'followers' ? 'フォロワー' : type === 'likes' ? 'いいね' : 'リール再生回数'}</h3>
                     <p>${pkg.price.toLocaleString()}円</p>
                     <ul>
+                        <li>業界最高水準の日本人アカウント</li>
                         <li>高品質な${type === 'followers' ? 'フォロワー' : type === 'likes' ? 'いいね' : 'リール再生回数'}</li>
+                        <li>安心・安全な運用</li>
                         <li>迅速な納品（24時間以内）</li>
                         <li>24時間年中無休のサポート</li>
                         <li>安全で目立たない配信</li>
